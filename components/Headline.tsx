@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { StyleProp, Text, TextStyle } from "react-native";
 import { Colors } from "../configs/colors";
 
 type HeadlineSizes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -27,14 +27,25 @@ const useFontSize = (as: HeadlineSizes) => {
 export const Headline = ({
   content,
   as,
+  style,
 }: {
   content: string;
   as: HeadlineSizes;
+  style?: StyleProp<TextStyle>;
 }) => {
   const fontSize = useFontSize(as);
 
   return (
-    <Text style={{ fontSize, color: Colors.light, fontWeight: "700" }}>
+    <Text
+      style={[
+        {
+          fontSize,
+          color: Colors.tertiary,
+          fontWeight: "500",
+        },
+        style,
+      ]}
+    >
       {content}
     </Text>
   );

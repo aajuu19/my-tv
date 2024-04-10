@@ -15,12 +15,18 @@ export const PopularView: React.FC<PopularViewProps> = ({ style }) => {
         style={{
           display: "flex",
           flexDirection: "row",
-          marginTop: 8,
+          marginTop: 10,
         }}
       >
-        <Card style={{ marginRight: 16 }} />
-        <Card style={{ marginRight: 16 }} />
-        <Card style={{ marginRight: 16 }} />
+        <Card
+          style={{ marginRight: 16 }}
+          title="Das ist der Titel einer Show"
+        />
+        <Card
+          style={{ marginRight: 16 }}
+          title="Das ist der Titel einer Show"
+        />
+        <Card title="Das ist der Titel einer Show" />
       </ScrollView>
     </View>
   );
