@@ -1,19 +1,22 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Colors } from "../../../../configs/colors";
+import { Colors } from "../../../../configs";
 import { Headline } from "../../../../components";
+import { PopularView } from "./popular-view";
 
 export const ShowsView = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.viewHeader}>
-        <Headline content="Shows" as="h1" />
-        <Text style={{ color: Colors.light, paddingTop: 8 }}>
-          Und das hier ist ein kleiner Beschreibungstext, der erstmal nur aus
-          visuellen Gruenden verwendet wird.
-        </Text>
+    <>
+      <View style={styles.container}>
+        <View style={styles.viewHeader}>
+          <Headline content="Shows" as="h1" />
+          <Text style={{ color: Colors.light, paddingTop: 8 }}>
+            Und das hier ist ein kleiner Beschreibungstext, der erstmal nur aus
+            visuellen Gruenden verwendet wird.
+          </Text>
+        </View>
+        <PopularView style={{ marginTop: 20 }} />
       </View>
-      <Text>Das hier ist der Shows View</Text>
-    </View>
+    </>
   );
 };
 
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
   viewHeader: {
     borderRadius: 20,
     backgroundColor: Colors.tertiary,
-    marginHorizontal: 8,
+    marginHorizontal: 16,
     padding: 24,
   },
 });
