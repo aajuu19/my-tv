@@ -32,6 +32,7 @@ export const PopularView: React.FC<PopularViewProps> = ({ style }) => {
         {popularShows.map((show) => {
           return (
             <Card
+              key={show.name}
               style={{ marginRight: StyleDefaults["space-md"] }}
               title={show.name}
             />

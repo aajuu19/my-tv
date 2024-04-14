@@ -12,7 +12,6 @@ export const Card: React.FC<CardProps> = ({ style, title }) => {
   return (
     <View style={[styles.container, style]}>
       <Image
-        /* TODO: Implement image path */
         source={require("../assets/header-image.jpg")}
         style={{
           width: "100%",
