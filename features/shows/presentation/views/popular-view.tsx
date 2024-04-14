@@ -8,7 +8,7 @@ type PopularViewProps = {
 export const PopularView: React.FC<PopularViewProps> = ({ style }) => {
   return (
     <View style={[{ marginHorizontal: 16 }, style]}>
-      <Headline content="Beliebte Shows" as="h4" />
+      <Headline content="Derzeit beliebt" as="h4" />
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}

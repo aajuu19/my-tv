@@ -1,14 +1,25 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Colors } from "../../../../configs";
-import { Headline } from "../../../../components";
+import { Header, Headline, CustomTextInput } from "../../../../components";
 import { PopularView } from "./popular-view";
+import { useState } from "react";
 
 export const ShowsView = () => {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <>
       <View style={styles.container}>
+        <Header>
+          <Headline content="Shows" as="h1" style={{ color: Colors.light }} />
+          <CustomTextInput
+            style={{ marginTop: 8 }}
+            value={searchText}
+            onChangeText={setSearchText}
+            iconName="search"
+          />
+        </Header>
         <View style={styles.viewHeader}>
-          <Headline content="Shows" as="h1" />
           <Text style={{ color: Colors.light, paddingTop: 8 }}>
             Und das hier ist ein kleiner Beschreibungstext, der erstmal nur aus
             visuellen Gruenden verwendet wird.
@@ -22,7 +33,6 @@ export const ShowsView = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 60,
     display: "flex",
     width: "100%",
     justifyContent: "flex-start",
@@ -30,7 +40,7 @@ const styles = StyleSheet.create({
   },
   viewHeader: {
     borderRadius: 20,
-    backgroundColor: Colors.tertiary,
+    backgroundColor: Colors.primary,
     marginHorizontal: 16,
     padding: 24,
   },
