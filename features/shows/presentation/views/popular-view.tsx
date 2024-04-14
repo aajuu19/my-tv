@@ -5,14 +5,17 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import { Headline, Card } from "../../../../components";
-import { StyleDefaults } from "../../../../configs";
+import { Headline, Card } from "@/components";
+import { StyleDefaults } from "@/configs";
+import { usePopularShowsViewModel } from "../view-models";
 
 type PopularViewProps = {
   style?: StyleProp<ViewStyle>;
 };
 
 export const PopularView: React.FC<PopularViewProps> = ({ style }) => {
+  const { popularShows } = usePopularShowsViewModel();
+
   return (
     <View style={[styles.container, style]}>
       <Headline content="Derzeit beliebt" as="h4" />
@@ -26,18 +29,14 @@ export const PopularView: React.FC<PopularViewProps> = ({ style }) => {
           overflow: "visible",
         }}
       >
-        <Card
-          style={{ marginRight: StyleDefaults["space-md"] }}
-          title="Das ist der Titel einer Show"
-        />
-        <Card
-          style={{ marginRight: StyleDefaults["space-md"] }}
-          title="Das ist der Titel einer Show"
-        />
-        <Card
-          style={{ marginRight: StyleDefaults["space-md"] }}
-          title="Das ist der Titel einer Show"
-        />
+        {popularShows.map((show) => {
+          return (
+            <Card
+              style={{ marginRight: StyleDefaults["space-md"] }}
+              title={show.name}
+            />
+          );
+        })}
       </ScrollView>
     </View>
   );

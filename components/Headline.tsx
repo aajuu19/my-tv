@@ -1,5 +1,5 @@
 import { StyleProp, Text, TextStyle } from "react-native";
-import { Colors } from "../configs/colors";
+import { Colors } from "@/configs/colors";
 
 type HeadlineSizes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 

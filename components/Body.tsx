@@ -1,5 +1,5 @@
 import { StyleSheet, View, ViewProps } from "react-native";
-import { StyleDefaults } from "../configs";
+import { StyleDefaults } from "@/configs";
 
 export const Body: React.FC<ViewProps> = (props) => {
   return (

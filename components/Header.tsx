@@ -1,5 +1,5 @@
 import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
-import { Colors, StyleDefaults } from "../configs";
+import { Colors, StyleDefaults } from "@/configs";
 
 type HeaderProps = {
   children: React.ReactNode;

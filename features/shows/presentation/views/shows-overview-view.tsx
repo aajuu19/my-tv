@@ -1,11 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Colors, StyleDefaults } from "../../../../configs";
-import {
-  Header,
-  Headline,
-  CustomTextInput,
-  Body,
-} from "../../../../components";
+import { Colors, StyleDefaults } from "@/configs";
+import { Header, Headline, CustomTextInput, Body } from "@/components";
 import { PopularView } from "./popular-view";
 import { useState } from "react";
 import { ShowView } from "./show-view";

@@ -1,5 +1,5 @@
 import { Image, StyleProp, StyleSheet, View, ViewStyle } from "react-native";
-import { Colors, StyleDefaults } from "../configs";
+import { Colors, StyleDefaults } from "@/configs";
 import { Headline } from "./Headline";
 
 type CardProps = {

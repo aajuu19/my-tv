@@ -6,7 +6,7 @@ import {
   TextStyle,
   View,
 } from "react-native";
-import { Colors, StyleDefaults } from "../../configs";
+import { Colors, StyleDefaults } from "@/configs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 type CustomTextInputProps = {
