@@ -1,6 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Colors } from "../../../../configs";
-import { Header, Headline, CustomTextInput } from "../../../../components";
+import { Colors, StyleDefaults } from "../../../../configs";
+import {
+  Header,
+  Headline,
+  CustomTextInput,
+  Body,
+} from "../../../../components";
 import { PopularView } from "./popular-view";
 import { useState } from "react";
 
@@ -19,13 +24,13 @@ export const ShowsView = () => {
             iconName="search"
           />
         </Header>
-        <View style={styles.viewHeader}>
-          <Text style={{ color: Colors.light, paddingTop: 8 }}>
+        <Body style={styles.viewHeader}>
+          <Text style={{ color: Colors.dark, paddingTop: 8 }}>
             Und das hier ist ein kleiner Beschreibungstext, der erstmal nur aus
             visuellen Gruenden verwendet wird.
           </Text>
-        </View>
-        <PopularView style={{ marginTop: 20 }} />
+          <PopularView style={{ marginTop: 20 }} />
+        </Body>
       </View>
     </>
   );
@@ -39,9 +44,8 @@ const styles = StyleSheet.create({
     backgroundColor: "",
   },
   viewHeader: {
-    borderRadius: 20,
-    backgroundColor: Colors.primary,
-    marginHorizontal: 16,
+    borderRadius: StyleDefaults.radius,
+    backgroundColor: Colors.background,
     padding: 24,
   },
 });

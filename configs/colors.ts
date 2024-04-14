@@ -3,7 +3,7 @@ export enum Colors {
   secondary = "#50727B",
   tertiary = "#484848",
   dark = "#35374B",
-  light = "#FFFFFF",
-  background = "#EFF2F6",
+  light = "##FAFAFA",
+  background = "##FCFCFC",
   border = "#dadde2",
 }
