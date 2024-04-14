@@ -12,5 +12,5 @@ export type Show = {
   /** description of the show */
   description: string;
   /** related shows */
-  relatedShows: Show[];
+  relatedShows?: Show[];
 };

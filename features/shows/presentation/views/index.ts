@@ -1,1 +1,2 @@
-export * from "./shows-view";
+export * from "./shows-overview-view";
+export * from "./show-view";

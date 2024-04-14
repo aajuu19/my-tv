@@ -4,7 +4,7 @@ import { Headline } from "./Headline";
 
 type CardProps = {
   style?: StyleProp<ViewStyle>;
-  /* imgPath: string; */
+  imgPath?: string;
   title: string;
 };
 
@@ -12,7 +12,8 @@ export const Card: React.FC<CardProps> = ({ style, title }) => {
   return (
     <View style={[styles.container, style]}>
       <Image
-        source={require(`../assets/header-image.jpg`)}
+        /* TODO: Implement image path */
+        source={require("../assets/header-image.jpg")}
         style={{
           width: "100%",
           height: 100,

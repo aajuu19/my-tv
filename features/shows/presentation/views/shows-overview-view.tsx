@@ -8,8 +8,9 @@ import {
 } from "../../../../components";
 import { PopularView } from "./popular-view";
 import { useState } from "react";
+import { ShowView } from "./show-view";
 
-export const ShowsView = () => {
+export const ShowsOverviewView = () => {
   const [searchText, setSearchText] = useState("");
 
   return (
@@ -35,6 +36,7 @@ export const ShowsView = () => {
             visuellen Gruenden verwendet wird.
           </Text>
           <PopularView />
+          <ShowView />
         </Body>
       </View>
     </>
@@ -46,7 +48,6 @@ const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     justifyContent: "flex-start",
-    backgroundColor: "",
   },
   body: {
     borderRadius: StyleDefaults.radius,
