@@ -1,12 +1,13 @@
-import { StyleSheet, View } from "react-native";
-import { Colors } from "../configs";
+import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
+import { Colors, StyleDefaults } from "../configs";
 
 type HeaderProps = {
   children: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
 };
 
-export const Header: React.FC<HeaderProps> = ({ children }) => {
-  return <View style={styles.container}>{children}</View>;
+export const Header: React.FC<HeaderProps> = ({ children, style }) => {
+  return <View style={[styles.container, style]}>{children}</View>;
 };
 
 const styles = StyleSheet.create({
@@ -14,6 +15,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     paddingTop: 70,
     paddingBottom: 60,
-    paddingHorizontal: 16,
+    paddingHorizontal: StyleDefaults["space-md"],
   },
 });

@@ -11,7 +11,7 @@ import { Headline } from "./Headline";
 
 type CardProps = {
   style?: StyleProp<ViewStyle>;
-  /* imgTitle: string; */
+  /* imgPath: string; */
   title: string;
 };
 
@@ -20,7 +20,12 @@ export const Card: React.FC<CardProps> = ({ style, title }) => {
     <View style={[styles.container, style]}>
       <Image
         source={require(`../assets/header-image.jpg`)}
-        style={{ width: "100%", height: 100 }}
+        style={{
+          width: "100%",
+          height: 100,
+          borderTopLeftRadius: StyleDefaults.radius,
+          borderTopRightRadius: StyleDefaults.radius,
+        }}
       />
       <View style={{ paddingVertical: 16, paddingHorizontal: 12 }}>
         <Headline
@@ -40,15 +45,15 @@ const styles = StyleSheet.create({
   container: {
     height: 200,
     width: 250,
-    backgroundColor: Colors.light,
     borderRadius: StyleDefaults.radius,
-    overflow: "hidden",
-    shadowColor: Colors.border,
+    backgroundColor: Colors.light,
+    shadowColor: Colors.dark,
     shadowOffset: {
-      width: 10,
-      height: 10,
+      width: 0,
+      height: 0,
     },
-    shadowOpacity: 0.3,
-    shadowRadius: 6,
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 5,
   },
 });

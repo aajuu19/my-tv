@@ -18,18 +18,23 @@ export const ShowsView = () => {
         <Header>
           <Headline content="Shows" as="h1" style={{ color: Colors.light }} />
           <CustomTextInput
-            style={{ marginTop: 8 }}
+            style={{ marginTop: StyleDefaults["space-sm"] }}
             value={searchText}
             onChangeText={setSearchText}
             iconName="search"
           />
         </Header>
-        <Body style={styles.viewHeader}>
-          <Text style={{ color: Colors.dark, paddingTop: 8 }}>
+        <Body style={styles.body}>
+          <Text
+            style={{
+              color: Colors.dark,
+              padding: StyleDefaults["space-md"],
+            }}
+          >
             Und das hier ist ein kleiner Beschreibungstext, der erstmal nur aus
             visuellen Gruenden verwendet wird.
           </Text>
-          <PopularView style={{ marginTop: 20 }} />
+          <PopularView />
         </Body>
       </View>
     </>
@@ -43,9 +48,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     backgroundColor: "",
   },
-  viewHeader: {
+  body: {
     borderRadius: StyleDefaults.radius,
     backgroundColor: Colors.background,
-    padding: 24,
   },
 });
