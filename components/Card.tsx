@@ -1,11 +1,4 @@
-import {
-  Image,
-  StyleProp,
-  StyleSheet,
-  Text,
-  View,
-  ViewStyle,
-} from "react-native";
+import { Image, StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 import { Colors, StyleDefaults } from "../configs";
 import { Headline } from "./Headline";
 
@@ -27,7 +20,12 @@ export const Card: React.FC<CardProps> = ({ style, title }) => {
           borderTopRightRadius: StyleDefaults.radius,
         }}
       />
-      <View style={{ paddingVertical: 16, paddingHorizontal: 12 }}>
+      <View
+        style={{
+          paddingVertical: StyleDefaults["space-md"],
+          paddingHorizontal: StyleDefaults["space-sm"],
+        }}
+      >
         <Headline
           as="h4"
           content={title}
@@ -35,7 +33,6 @@ export const Card: React.FC<CardProps> = ({ style, title }) => {
             color: Colors.dark,
           }}
         />
-        <Text>Card</Text>
       </View>
     </View>
   );
