@@ -1,5 +1,5 @@
 export enum StyleDefaults {
-  radius = 25,
+  radius = 20,
   "space-sm" = 10,
   "space-md" = 16,
   "space-lg" = 20,

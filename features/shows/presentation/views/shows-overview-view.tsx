@@ -4,6 +4,7 @@ import { Header, Headline, CustomTextInput, Body } from "@/components";
 import { PopularView } from "./popular-view";
 import { useState } from "react";
 import { ShowView } from "./show-view";
+import { CategoryTileView } from "./category-tile-view";
 
 export const ShowsOverviewView = () => {
   const [searchText, setSearchText] = useState("");
@@ -31,6 +32,7 @@ export const ShowsOverviewView = () => {
             visuellen Gruenden verwendet wird.
           </Text>
           <PopularView />
+          <CategoryTileView />
           <ShowView />
         </Body>
       </View>

@@ -8,10 +8,18 @@ export const mockedShowData: Show = {
   episodes: 58,
   releaseDate: new Date(),
   nextEpisodeDate: new Date(),
+  prevEpisodeDate: new Date(),
+  categories: ["Drama", "Wettkampf"],
 };
 
 export const mockedOverviewShowData: Show[] = [
   { ...mockedShowData, name: "Eine andere Show" },
   { ...mockedShowData, name: "Ganz besondere Show der Extraklasse" },
   { ...mockedShowData, name: "Sehr spannende und abenteurreiche Show" },
+];
+
+export const alternativeMockedOverviewShowData: Show[] = [
+  { ...mockedShowData, name: "Ganz besondere show" },
+  { ...mockedShowData, name: "Shows koennen viele Namen haben" },
+  { ...mockedShowData, name: "Jede Show ist anders" },
 ];

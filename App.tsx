@@ -5,7 +5,6 @@ import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "./configs";
-import { Header } from "./components";
 
 const Tab = createBottomTabNavigator();
 
@@ -53,6 +52,7 @@ export default function App() {
       <Tab.Navigator>
         {navigation.map(({ name, component, iconName }) => (
           <Tab.Screen
+            key={name}
             options={{
               tabBarIcon: ({ focused }) => (
                 <Ionicons
