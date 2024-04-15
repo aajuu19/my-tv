@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useCategoryTilesViewModel } from "../view-models";
-import { Button, Headline } from "@/components";
+import { Button, Card, Headline } from "@/components";
 import { useMemo, useState } from "react";
 import { StyleDefaults } from "@/configs";
 
@@ -37,25 +37,36 @@ export const CategoryTileView = () => {
         })}
       </View>
 
-      {categoryShows?.map((show) => {
-        return (
-          <View key={show.name}>
-            <Text>{show.name}</Text>
-          </View>
-        );
-      })}
-      <Text>CategoryTileView</Text>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.showsContainer}
+      >
+        {categoryShows?.map((show) => {
+          return (
+            <Card
+              title={show.name}
+              key={show.name}
+              style={{ marginRight: StyleDefaults["space-md"] }}
+            />
+          );
+        })}
+      </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: StyleDefaults["space-md"],
+    marginLeft: StyleDefaults["space-md"],
     marginVertical: StyleDefaults["space-lg"],
   },
   categoryButtons: {
     flexDirection: "row",
     marginTop: StyleDefaults["space-sm"],
+  },
+  showsContainer: {
+    marginTop: StyleDefaults["space-sm"],
+    overflow: "visible",
   },
 });

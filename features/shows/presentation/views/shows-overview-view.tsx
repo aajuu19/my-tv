@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text } from "react-native";
 import { Colors, StyleDefaults } from "@/configs";
 import { Header, Headline, CustomTextInput, Body } from "@/components";
 import { PopularView } from "./popular-view";
@@ -11,7 +11,7 @@ export const ShowsOverviewView = () => {
 
   return (
     <>
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <Header>
           <Headline content="Shows" as="h1" style={{ color: Colors.light }} />
           <CustomTextInput
@@ -35,7 +35,7 @@ export const ShowsOverviewView = () => {
           <CategoryTileView />
           <ShowView />
         </Body>
-      </View>
+      </ScrollView>
     </>
   );
 };
