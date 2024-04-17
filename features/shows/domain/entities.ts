@@ -10,6 +10,8 @@ export type Category = {
 export type Show = {
   /** name of the show */
   name: string;
+  /** image for preview */
+  previewImage: string;
   /** release date of the show */
   releaseDate: Date;
   /** total amount of seasons */

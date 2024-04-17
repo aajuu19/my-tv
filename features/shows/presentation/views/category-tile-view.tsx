@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { useCategoryTilesViewModel } from "../view-models";
 import { Button, Card, Headline } from "@/components";
 import { useMemo, useState } from "react";
@@ -59,7 +59,7 @@ export const CategoryTileView = () => {
 const styles = StyleSheet.create({
   container: {
     marginLeft: StyleDefaults["space-md"],
-    marginVertical: StyleDefaults["space-lg"],
+    marginVertical: StyleDefaults["space-xl"],
   },
   categoryButtons: {
     flexDirection: "row",

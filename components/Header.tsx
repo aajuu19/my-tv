@@ -1,5 +1,6 @@
-import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
+import { StyleProp, StyleSheet, ViewStyle } from "react-native";
 import { Colors, StyleDefaults } from "@/configs";
+import { LinearGradient } from "expo-linear-gradient";
 
 type HeaderProps = {
   children: React.ReactNode;
@@ -7,7 +8,14 @@ type HeaderProps = {
 };
 
 export const Header: React.FC<HeaderProps> = ({ children, style }) => {
-  return <View style={[styles.container, style]}>{children}</View>;
+  return (
+    <LinearGradient
+      style={[styles.container, style]}
+      colors={[Colors.secondary, Colors.primary]}
+    >
+      {children}
+    </LinearGradient>
+  );
 };
 
 const styles = StyleSheet.create({

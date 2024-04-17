@@ -1,13 +1,23 @@
 import { ScrollView, StyleSheet, Text } from "react-native";
 import { Colors, StyleDefaults } from "@/configs";
 import { Header, Headline, CustomTextInput, Body } from "@/components";
-import { PopularView } from "./popular-view";
-import { useState } from "react";
-import { ShowView } from "./show-view";
-import { CategoryTileView } from "./category-tile-view";
+import { createContext, useEffect, useState } from "react";
+import { LatestShowsView, PopularView, ShowView, CategoryTileView } from "./";
+import { Show } from "../../domain/entities";
+
+type ShowContextValueProps = {
+  show: Show | null;
+  setShow: (show: Show) => void;
+};
+
+export const ShowContext = createContext<ShowContextValueProps>({
+  show: null,
+  setShow: () => {},
+});
 
 export const ShowsOverviewView = () => {
   const [searchText, setSearchText] = useState("");
+  const [show, setShow] = useState<Show | null>(null);
 
   return (
     <>
@@ -31,9 +41,12 @@ export const ShowsOverviewView = () => {
             Und das hier ist ein kleiner Beschreibungstext, der erstmal nur aus
             visuellen Gruenden verwendet wird.
           </Text>
-          <PopularView />
-          <CategoryTileView />
-          <ShowView />
+          <ShowContext.Provider value={{ show: show, setShow: setShow }}>
+            <PopularView />
+            <LatestShowsView />
+            <CategoryTileView />
+            <ShowView />
+          </ShowContext.Provider>
         </Body>
       </ScrollView>
     </>

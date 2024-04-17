@@ -8,6 +8,8 @@ import {
 import { Headline, Card } from "@/components";
 import { StyleDefaults } from "@/configs";
 import { usePopularShowsViewModel } from "../view-models";
+import { useContext } from "react";
+import { ShowContext } from "./shows-overview-view";
 
 type PopularViewProps = {
   style?: StyleProp<ViewStyle>;
@@ -15,6 +17,7 @@ type PopularViewProps = {
 
 export const PopularView: React.FC<PopularViewProps> = ({ style }) => {
   const { popularShows } = usePopularShowsViewModel();
+  const { setShow } = useContext(ShowContext);
 
   return (
     <View style={[styles.container, style]}>
@@ -35,6 +38,7 @@ export const PopularView: React.FC<PopularViewProps> = ({ style }) => {
               key={show.name}
               style={{ marginRight: StyleDefaults["space-md"] }}
               title={show.name}
+              onPress={() => setShow(show)}
             />
           );
         })}

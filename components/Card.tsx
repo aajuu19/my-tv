@@ -1,4 +1,12 @@
-import { Image, StyleProp, StyleSheet, View, ViewStyle } from "react-native";
+import {
+  Image,
+  StyleProp,
+  StyleSheet,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+  ViewStyle,
+} from "react-native";
 import { Colors, StyleDefaults } from "@/configs";
 import { Headline } from "./Headline";
 
@@ -6,11 +14,15 @@ type CardProps = {
   style?: StyleProp<ViewStyle>;
   imgPath?: string;
   title: string;
-};
+} & TouchableOpacityProps;
 
-export const Card: React.FC<CardProps> = ({ style, title }) => {
+export const Card: React.FC<CardProps> = (props) => {
   return (
-    <View style={[styles.container, style]}>
+    <TouchableOpacity
+      {...props}
+      style={[styles.container, props.style]}
+      onPress={props.onPress}
+    >
       <Image
         source={require("../assets/header-image.jpg")}
         style={{
@@ -28,13 +40,13 @@ export const Card: React.FC<CardProps> = ({ style, title }) => {
       >
         <Headline
           as="h4"
-          content={title}
+          content={props.title}
           style={{
             color: Colors.dark,
           }}
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
