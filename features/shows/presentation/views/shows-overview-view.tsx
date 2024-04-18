@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text } from "react-native";
 import { Colors, StyleDefaults } from "@/configs";
 import { Header, Headline, CustomTextInput, Body } from "@/components";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { LatestShowsView, PopularView, ShowView, CategoryTileView } from "./";
 import { Show } from "../../domain/entities";
 
@@ -15,7 +15,7 @@ export const ShowContext = createContext<ShowContextValueProps>({
   setShow: () => {},
 });
 
-export const ShowsOverviewView = () => {
+export const ShowsOverviewView = ({ navigation }) => {
   const [searchText, setSearchText] = useState("");
   const [show, setShow] = useState<Show | null>(null);
 

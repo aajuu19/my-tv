@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { ShowsOverviewView } from "./features/shows/presentation/views";
+import { ShowStackNavigator } from "./features/shows/presentation/views";
 import { NavigationContainer } from "@react-navigation/native";
 import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -36,7 +36,7 @@ const navigation: {
   },
   {
     name: "Shows",
-    component: ShowsOverviewView,
+    component: ShowStackNavigator,
     iconName: "videocam",
   },
   {
@@ -50,7 +50,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        {navigation.map(({ name, component, iconName }) => (
+        {navigation.map(({ name, component: customComp, iconName }) => (
           <Tab.Screen
             key={name}
             options={{
@@ -65,7 +65,7 @@ export default function App() {
               headerShown: false,
             }}
             name={name}
-            component={component}
+            component={customComp}
           />
         ))}
       </Tab.Navigator>
